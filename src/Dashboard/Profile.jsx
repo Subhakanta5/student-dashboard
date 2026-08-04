@@ -22,7 +22,7 @@ const Profile = () => {
      
     const fetchUser=async()=>{
         try {
-            const {data}=await axios.get(`https://studentdashboardbackend.onrender.com/users/${id}`)
+            const {data}=await axios.get(`http://localhost:3000/users/${id}`)
                 setUser(data)
         } catch (error) {
             toast.error("Something went wrong",{position:"top-center"})
@@ -34,7 +34,7 @@ const Profile = () => {
 
     const deletestudent=async()=>{
         try {
-           const result=await axios.delete(`https://studentdashboardbackend.onrender.com/users/${id}`) 
+           const result=await axios.delete(`http://localhost:3000/users/${id}`) 
            toast.success("Profile Deleted",{position:"top-center"})
            localStorage.removeItem("token")
            navigate("/")
@@ -46,7 +46,7 @@ const Profile = () => {
 
     const deleteProfile = async () => {
         try {
-            const res=await axios.delete(`https://studentdashboardbackend.onrender.com/users/${id}`)
+            const res=await axios.delete(`http://localhost:3000/users/${id}`)
             toast.success("Profile Deleted", { position : "top-center"})
             localStorage.removeItem("token")
             navigate("/")

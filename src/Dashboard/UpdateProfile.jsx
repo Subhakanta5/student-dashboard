@@ -21,7 +21,7 @@ const UpdateProfile = () => {
   console.log(id);
 
   const fetchdata = async () => {
-    const { data } = await axios.get(`https://studentdashboardbackend.onrender.com/users/${id}`);
+    const { data } = await axios.get(`http://localhost:3000/users/${id}`);
     setForm(data);
   };
   useEffect(() => {
@@ -75,7 +75,7 @@ const UpdateProfile = () => {
       return;
     }
     try {
-      await axios.put(`https://studentdashboardbackend.onrender.com/users/${id}`,form)
+      await axios.put(`http://localhost:3000/users/${id}`,form)
       toast.success("Profile Update Successfully", { position : "top-center"})
       navigate("/dashboard")
     } catch (error) {

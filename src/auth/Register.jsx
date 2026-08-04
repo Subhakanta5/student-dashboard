@@ -72,7 +72,7 @@ const Register = () => {
       return;
     }
     try {
-      const { data } = await axios.get("https://studentdashboardbackend.onrender.com/users");
+      const { data } = await axios.get("http://localhost:3000/users");
       let exist = false;
 
       const emailExist = data.find((ele) => ele.email === registerForm.email);
@@ -90,7 +90,7 @@ const Register = () => {
       }
       if (exist) return;
 
-      await axios.post("https://studentdashboardbackend.onrender.com/users", registerForm);
+      await axios.post("http://localhost:3000/users", registerForm);
       toast.success("Registartion Done", { position: "top-center" });
       setRegister({
         username: "",

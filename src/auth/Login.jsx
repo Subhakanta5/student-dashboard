@@ -17,7 +17,7 @@ const Login = () => {
 
   const fetchAllUser=async()=>{
     try {
-      const {data}=await axios.get("https://studentdashboardbackend.onrender.com/users")
+      const {data}=await axios.get("http://localhost:3000/users")
       setAllUsers(data)
     } catch (error) {
       toast.error("Something wrong. please try again later",{position:"top-center"})

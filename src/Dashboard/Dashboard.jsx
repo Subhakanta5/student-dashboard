@@ -18,7 +18,7 @@ const Dashboard = () => {
          
         const fetchUser=async()=>{
             try {
-                const {data}=await axios.get(`https://studentdashboardbackend.onrender.com/users/${id}`)
+                const {data}=await axios.get(`http://localhost:3000/users/${id}`)
                     setUser(data)
             } catch (error) {
                 toast.error("Something went wrong",{position:"top-center"})
